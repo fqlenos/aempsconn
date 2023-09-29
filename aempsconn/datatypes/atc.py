@@ -12,9 +12,9 @@ class ATCModel(BaseModel):
     Arguments:
         codigo (str): código ATC
         nombre (str): nombre descriptivo
-        nivel (str): nivel del código ATC
+        nivel (int): nivel del código ATC
     """
 
     codigo: str
     nombre: str
-    nivel: str
+    nivel: int

@@ -15,6 +15,6 @@ class EstadoModel(BaseModel):
         rev (int): fecha de revocación
     """
 
-    aut: int
-    sup: int
-    rev: int
+    aut: int | None = None
+    sup: int | None = None
+    rev: int | None = None

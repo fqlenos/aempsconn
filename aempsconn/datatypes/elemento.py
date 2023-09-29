@@ -16,5 +16,5 @@ class ElementoModel(BaseModel):
     """
 
     id: int
-    codigo: str
+    codigo: str | None = None
     nombre: str

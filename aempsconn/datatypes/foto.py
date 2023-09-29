@@ -16,6 +16,6 @@ class FotoModel(BaseModel):
         fecha (int): fecha de actualización de la Imagen
     """
 
-    tipo: Literal["Materiales", "Forma Farmacéutica"]
+    tipo: Literal["materialas", "formafarmac"]
     url: HttpUrl
     fecha: int

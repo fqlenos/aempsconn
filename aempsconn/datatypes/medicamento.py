@@ -66,7 +66,7 @@ class MedicamentoBaseModel(BaseModel):
     notas: bool
     materialesInf: bool
     docs: list["DocumentoModel"]
-    fotos: list["FotoModel"]
+    fotos: list["FotoModel"] | None = None
     viasAdministracion: list["ElementoModel"]
     formaFarmaceutica: "ElementoModel"
     formaFarmaceuticaSimplificada: "ElementoModel"
@@ -100,17 +100,17 @@ class MedicamentoModel(MedicamentoBaseModel):
             formaFarmaceutica (ElementoModel): forma farmacéutica
             formaFarmaceuticaSimplificada (ElementoModel): forma farmacéutica simplificada
             dosis (str): dosis del principio activo. En el caso de que haya más de un principio activo, aparecerán separados por “/” y mismo orden que los principios activos
-            pactivos (list[str]): lista de principios activos separada por comas. Solo aparece el nombre
+            pactivos (str): lista de principios activos separada por comas. Solo aparece el nombre
             atcs (list[ATCModel]): lista de códigos de ATC asociados al Medicamento
             principiosActivos (list[PActivoModel]): lista de los principios activos del Medicamento
             excipientes (list[ExcipienteModel]): lista de excipientes del Medicamento
             presentaciones (list[PresentacionModel]): lista de presentaciones del Medicamento
     """
 
-    pactivos: list[str]
+    pactivos: str
     atcs: list["ATCModel"]
     principiosActivos: list["PActivoModel"]
-    excipientes: list["ExcipienteModel"]
+    excipientes: list["ExcipienteModel"] | None = None
     presentaciones: list["PresentacionModel"]
 
 
