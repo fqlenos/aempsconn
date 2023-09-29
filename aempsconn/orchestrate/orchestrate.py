@@ -8,7 +8,7 @@ import sys
 from pydantic import HttpUrl
 
 from ..utils import ConfigModel, BASEURL
-from ..modules import cima
+from ..modules import cima, Base
 
 
 class Orchestrate:
@@ -44,6 +44,7 @@ class Orchestrate:
 
         # Initialize existing modules with current configuration.
         # Related to CIMA
+        self.base = Base(config=config)
         self.medicamento = cima.Medicamento(config=config)
         self.medicamentos = cima.Medicamentos(config=config)
 
