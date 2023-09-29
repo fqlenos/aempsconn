@@ -9,7 +9,6 @@ def logger(level: int = logging.INFO) -> logging.Logger:
 
         Returns:
             logging (logging.Logger): logging module
-
     """
     logger = logging.getLogger("aempsconn")
     logger.setLevel(level=level)
