@@ -3,7 +3,7 @@ from .formatter import Formatter
 import logging
 
 
-def logger() -> logging.Logger:
+def logger(level: int = logging.INFO) -> logging.Logger:
     """
     Define the logging with specific format and specific level.
 
@@ -12,7 +12,7 @@ def logger() -> logging.Logger:
 
     """
     logger = logging.getLogger("aempsconn")
-    logger.setLevel(logging.INFO)
+    logger.setLevel(level=level)
     stdout = logging.StreamHandler()
     stdout.setLevel(0)
     stdout.setFormatter(Formatter())
