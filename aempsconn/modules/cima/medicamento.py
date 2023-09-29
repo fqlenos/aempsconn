@@ -39,7 +39,7 @@ class Medicamento(Base):
         return Endpoint.MEDICAMENTO.value
 
     @json_res_handler
-    def get(self) -> MedicamentoModel:
+    def get(self) -> MedicamentoModel | None:
         """
         Create specific response with the cororect data type
 
