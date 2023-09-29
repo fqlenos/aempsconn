@@ -47,6 +47,8 @@ class Orchestrate:
         self.base = Base(config=config)
         self.medicamento = cima.Medicamento(config=config)
         self.medicamentos = cima.Medicamentos(config=config)
+        self.presentacion = cima.Presentacion(config=config)
+        self.presentaciones = cima.Presentaciones(config=config)
 
         # Related to CIMA Vet
 
