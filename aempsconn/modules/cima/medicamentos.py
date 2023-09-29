@@ -3,7 +3,6 @@ Module for getting information related to Medicamentos.
 """
 
 from logging import Logger
-from requests.exceptions import JSONDecodeError
 
 from ..base import Base
 from ...utils import Endpoint, Keys
