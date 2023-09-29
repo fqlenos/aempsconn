@@ -7,7 +7,7 @@ from typing import Literal
 
 
 class Keys(Enum):
-    MEDICAMENTO = Literal["pagina", "cn", "nregistro"]
+    MEDICAMENTO = Literal["cn", "nregistro"]
     MEDICAMENTOS = Literal[
         "pagina",
         "nombre",
@@ -28,6 +28,19 @@ class Keys(Enum):
         "comerc",
         "autorizados",
         "receta",
+        "estupefaciente",
+        "psicotropo",
+        "estuopsico",
+    ]
+    PRESENTACION = Literal["codNacional"]
+    PRESENTACIONES = Literal[
+        "pagina",
+        "cn",
+        "nregistro",
+        "vmp",
+        "vmpp",
+        "idpractiv1",
+        "comerc",
         "estupefaciente",
         "psicotropo",
         "estuopsico",
