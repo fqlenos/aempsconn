@@ -6,36 +6,33 @@ Library designed for interacting with the AEMPS API.
 ```python
 import aempsconn
 
-aemps = aempsconn.Orchestrate(logger=aempsconn.logger(level=50))
+# Initialize all the modules with the same configuration.
+aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
 
-aemps.medicamento.add_condition(key="nregistro", value="59494")
-medicamento = aemps.medicamento.get()
+# Create a filter needed for the wanted request.
+# This filter is custom for "/medicamento" endpoint.
+filter1 = aemps.filter_medicamento.num_registro.equals("59494")
+# Download the med that satisfies the previous custom filter.
+med = aemps.medicamento.get(filter=filter1)
 
-if medicamento is not None:
-    print(medicamento.nombre.title())
-    
-else:
-    print("No existen medicamentos que cumplan con esas condiciones.")
-```
+# If med is not null prints the name.
+if med is not None:
+    print(med.nombre)
 
-```python
-import aempsconn
+# Create a new filter needed for the wanted request.
+# This filter is custom for "/medicamentos" endpoint.
+filter2 = (
+    aemps.filter_medicamentos.nombre.equals("paraceta*")
+    .comercializado.equals(True)
+    .laboratorio.equals("cinfa")
+    .receta.equals(True)
+)
+# Download all the meds that satisfy the previous custom filter.
+meds = aemps.medicamentos.get(filter=filter2)
 
-aemps = aempsconn.Orchestrate(logger=aempsconn.logger(level=50))
+# If meds are not null iterates and prints the names.
+if meds is not None:
+    for med in meds:
+        print(med.nombre)
 
-aemps.medicamentos.add_condition(key="nombre", value="paraceta*")
-aemps.medicamentos.add_condition(key="comerc", value=1)
-aemps.medicamentos.add_condition(key="laboratorio", value="cinfa")
-medicamentos = aemps.medicamentos.get()
-
-if medicamentos is not None:
-    for med in medicamentos:
-        print(f"[*] {med.nombre.title()}")
-        print(f"\t- {med.labtitular.title()}")
-
-        for via in med.viasAdministracion:
-            print(f"\t- {via.nombre.title()}")
-
-else:
-    print("No existen medicamentos que cumplan con esas condiciones.")
 ```
