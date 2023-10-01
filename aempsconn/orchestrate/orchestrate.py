@@ -9,6 +9,7 @@ from pydantic import HttpUrl
 
 from ..utils import ConfigModel, BASEURL
 from ..modules import cima, Base
+from ..filter import Filter, FilterMedicamento, FilterMedicamentos
 
 
 class Orchestrate:
@@ -43,13 +44,11 @@ class Orchestrate:
             sys.exit()
 
         # Initialize existing modules with current configuration.
+        Base(config=config)
+        Filter(config=config)
+
         # Related to CIMA
-        self.base = Base(config=config)
+        self.filter_medicamento = FilterMedicamento(config=config)
+        self.filter_medicamentos = FilterMedicamentos(config=config)
         self.medicamento = cima.Medicamento(config=config)
         self.medicamentos = cima.Medicamentos(config=config)
-        self.presentacion = cima.Presentacion(config=config)
-        self.presentaciones = cima.Presentaciones(config=config)
-
-        # Related to CIMA Vet
-
-        # Related to REEC
