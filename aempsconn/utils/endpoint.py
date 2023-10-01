@@ -8,8 +8,13 @@ BASEURL = "https://cima.aemps.es/cima/rest"
 
 
 class Endpoint(Enum):
+
+    """
+    Different existing and working endpoints
+    """
+
     MEDICAMENTOS = "/medicamentos"
     MEDICAMENTO = "/medicamento"
-    PRESENTACIONES = "/presentaciones"
-    PRESENTACION = "/presentacion"
-    PSUMINISTRO = "/psuministro"
+    # PRESENTACIONES = "/presentaciones"
+    # PRESENTACION = "/presentacion"
+    # PSUMINISTRO = "/psuministro"
