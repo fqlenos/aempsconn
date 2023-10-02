@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aempsconn"
-version = "0.1.0"
+version = "0.1.1"
 description = "Library designed for interacting with the AEMPS API"
 authors = ["fqlenos <fqlenos@protonmail.com>"]
 readme = "README.md"
