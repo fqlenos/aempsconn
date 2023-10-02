@@ -1,3 +1,32 @@
 from .filter import Filter
-from .filter_medicamento import FilterMedicamento
-from .filter_medicamentos import FilterMedicamentos
+from .filter_medicamento import (
+    FilterMedicamento,
+    CodNacionalFilter,
+    NumRegistroFilter,
+    Equals,
+)
+from .filter_medicamentos import (
+    FilterMedicamentos,
+    NombreFilter,
+    ATCFilter,
+    AutorizadosFilter,
+    BiosimilarFilter,
+    CodNacionalFilter,
+    ComercFilter,
+    EstuopsicoFilter,
+    EstupefacienteFilter,
+    HuerfanoFilter,
+    IDPactivoOneFilter,
+    IDPactivoTwoFilter,
+    NumeroPactivoFilter,
+    NumRegistroFilter,
+    PactivoOneFilter,
+    PactivoTwoFilter,
+    LabFilter,
+    PsicotropoFilter,
+    RecetaFilter,
+    SustFilter,
+    TrianguloFilter,
+    VMPFilter,
+    Equals,
+)
