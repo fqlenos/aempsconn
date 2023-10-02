@@ -31,7 +31,7 @@ import aempsconn
 aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
 
 filter_med  = aemps.filter_medicamento.<FILTER_CONDITION_MED>.equals(value="")
-filter_meds = aemps.filter_medicamento.<FILTER_CONDITION__MEDS>.equals(value="")
+filter_meds = aemps.filter_medicamentos.<FILTER_CONDITION__MEDS>.equals(value="")
 ```
 
 This query builder supports as many conditions/filters as you want.  
