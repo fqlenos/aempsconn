@@ -6,7 +6,7 @@ More information related to the official REST API can be found [here](https://ci
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install aempsconn.
 
 ```bash
 pip install aempsconn
@@ -26,7 +26,7 @@ It has developed a easy-use query builder for the most important endpoints: `/me
 Each endpoint has its own custom filters so you can find and add them to the request by:
 
 ```python
-import aempsonn
+import aempsconn
 
 aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
 
