@@ -12,6 +12,15 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install aempsconn
 ```
 
+## Custom Logger
+The use of the `logger` in the library **is not mandatory**.  
+
+A *custom logger* has been created in order to offer the possibility to use it in an integrated way with the library and it allows you to set the logging level. 
+
+However, as the `logger` argument requires a Logger type, it is fully customizable so that the programmer can set it according to his own preferences.  
+
+**To not use any logger, simply leave it blank.**
+
 ## Building queries
 It has developed a easy-use query builder for the most important endpoints: `/medicamento` & `/medicamentos`.  
 Each endpoint has its own custom filters so you can find and add them to the request by:
@@ -19,8 +28,10 @@ Each endpoint has its own custom filters so you can find and add them to the req
 ```python
 import aempsonn
 
-filter_med  = aempsconn.filter_medicamento.<FILTER_MED>.equals(value="")
-filter_meds = aempsconn.filter_medicamento.<FILTER_MEDS>.equals(value="")
+aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
+
+filter_med  = aemps.filter_medicamento.<FILTER_CONDITION_MED>.equals(value="")
+filter_meds = aemps.filter_medicamento.<FILTER_CONDITION__MEDS>.equals(value="")
 ```
 
 This query builder supports as many conditions/filters as you want.  
