@@ -5,14 +5,14 @@ Module for getting information related to Medicamentos.
 import sys
 
 from ..base import Base
-from ...utils import Endpoint
+from ...utils import Endpoint, ConfigModel
 from ...datatypes import ListMedicamentoModel
 from ...decorators import json_res_handler
 from ...filter import FilterMedicamentos
 
 
 class Medicamentos(Base):
-    def __init__(self, config) -> None:
+    def __init__(self, config: ConfigModel) -> None:
         super().__init__(config=config)
 
     def get_specific_endpoint(self) -> str:

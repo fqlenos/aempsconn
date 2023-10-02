@@ -14,7 +14,6 @@ from ...filter import FilterMedicamento
 class Medicamento(Base):
     def __init__(self, config: ConfigModel) -> None:
         super().__init__(config=config)
-        self.conditions: dict = {}
 
     def get_specific_endpoint(self) -> str:
         """
