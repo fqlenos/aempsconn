@@ -24,30 +24,29 @@ def http_res_handler(func):
                 self.config.logger.info(f"Request to '{self.endpoint}' successful")
                 self.config.logger.info(res.text)
 
-            raise UnhandledError()
             return res
 
         except Timeout as e:
             if self.config.logger is not None:
-                self.config.logger.error(e)
+                self.config.logger.critical(e)
 
             raise TimeoutFailure()
 
         except HTTPError as e:
             if self.config.logger is not None:
-                self.config.logger.error(e)
+                self.config.logger.critical(e)
 
             raise HTTPFailure()
 
         except ProxyError as e:
             if self.config.logger is not None:
-                self.config.logger.error(e)
+                self.config.logger.critical(e)
 
             raise ProxyFailure()
 
         except RequestException as e:
             if self.config.logger is not None:
-                self.config.logger.error(e)
+                self.config.logger.critical(e)
 
             raise RequestFailure()
 
