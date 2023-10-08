@@ -44,7 +44,18 @@ class ProxyFailure(CustomException):
     Custom exception related to the proxy configuration
     """
 
-    def __init__(self, message: str = "Check the Proxy ") -> None:
+    def __init__(self, message: str = "Check the Proxy.") -> None:
+        super().__init__(message)
+
+
+class ConnectionFailure(CustomException):
+    """
+    Custom exception related to the connections
+    """
+
+    def __init__(
+        self, message: str = "Check the configuration. It cannot be connected."
+    ) -> None:
         super().__init__(message)
 
 
