@@ -4,11 +4,11 @@ Module for getting information related to Medicamentos.
 
 import sys
 
-from ..base import Base
-from ...utils import Endpoint, ConfigModel
 from ...datatypes import MedicamentoModel
 from ...decorators import json_res_handler
 from ...filter import FilterMedicamento
+from ...utils import ConfigModel, Endpoint
+from ..base import Base
 
 
 class Medicamento(Base):

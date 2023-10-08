@@ -33,10 +33,4 @@ def json_res_handler(func):
 
             raise JSONDecodeFailure()
 
-        except Exception as e:
-            if self.config.logger is not None:
-                self.config.logger.critical(f"Unhandled error: {e}")
-
-            raise UnhandledError()
-
     return wrapper

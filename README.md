@@ -31,11 +31,11 @@ import aempsconn
 aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
 
 filter_med  = aemps.filter_medicamento.<FILTER_CONDITION_MED>.equals(value="")
-filter_meds = aemps.filter_medicamentos.<FILTER_CONDITION__MEDS>.equals(value="")
+filter_meds = aemps.filter_medicamentos.<FILTER_CONDITION_MEDS>.equals(value="")
 ```
 
 This query builder supports as many conditions/filters as you want.  
-Taking into account that the first endpoint **will only make use of the last** one indicated, since it only admits a single condition.
+Be noted that the the first endpoint (`/medicamento`) **will only make use of the last condition set**, since it only admits a single condition.
 
 ## Usage
 ```python
@@ -43,6 +43,8 @@ import aempsconn
 
 # Initialize all the modules with the same configuration.
 aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
+# or initialize all the modules without the Logger or any other custom settings
+aemps = aempsconn.Orchestrate()
 
 # Create a filter needed for the wanted request.
 # This filter is custom for "/medicamento" endpoint.
