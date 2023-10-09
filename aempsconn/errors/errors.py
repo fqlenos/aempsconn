@@ -48,17 +48,6 @@ class ProxyFailure(CustomException):
         super().__init__(message)
 
 
-class ConnectionFailure(CustomException):
-    """
-    Custom exception related to the connections
-    """
-
-    def __init__(
-        self, message: str = "Check the configuration. It cannot be connected."
-    ) -> None:
-        super().__init__(message)
-
-
 class RequestFailure(CustomException):
     """
     Custom exception related to the python3 request module
