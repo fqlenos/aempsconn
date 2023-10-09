@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aempsconn"
-version = "0.1.3"
+version = "0.1.3.1"
 description = "Library designed for interacting with the CIMA API (AEMPS)"
 license = "MIT"
 authors = ["fqlenos <fqlenos@protonmail.com>"]
