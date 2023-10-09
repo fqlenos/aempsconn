@@ -30,12 +30,39 @@ import aempsconn
 
 aemps = aempsconn.Orchestrate(logger=aempsconn.CustomLogger(level=50))
 
-filter_med  = aemps.filter_medicamento.<FILTER_CONDITION_MED>.equals(value="")
-filter_meds = aemps.filter_medicamentos.<FILTER_CONDITION_MEDS>.equals(value="")
+filter_med  = aemps.filter_medicamento.<FILTER_CONDITION_MED>.equals(value=<VALUE>)
+filter_meds = aemps.filter_medicamentos.<FILTER_CONDITION_MEDS>.equals(value=<VALUE>)
 ```
 
 This query builder supports as many conditions/filters as you want.  
 Be noted that the the first endpoint (`/medicamento`) **will only make use of the last condition set**, since it only admits a single condition.
+
+## Handling errors  
+The library comes with custom exceptions for error handling.  
+This exceptions are the following:
+- _aempsconn.errors.ConnectionFailure_  
+Custom exception related to the timeout.
+
+- _aempsconn.errors.HTTPFailure_  
+Custom exception related to the HTTP requests.
+
+- _aempsconn.errors.JSONDecodeFailure_  
+Custom exception related to JSON decode.
+
+- _aempsconn.errors.JSONKeyFailure_  
+Custom exception related to JSON dict's keys.
+
+- _aempsconn.errors.ProxyFailure_  
+Custom exception related to the proxy configuration.
+
+- _aempsconn.errors.RequestFailure_  
+Custom exception related to the Python3 request module.
+
+- _aempsconn.errors.TimeoutFailure_  
+Custom exception related to the timeout.
+
+- _aempsconn.errors.UnhandledError_  
+Custom exception related to unhandled exceptions.
 
 ## Usage
 ```python
