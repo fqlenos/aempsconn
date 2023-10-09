@@ -40,8 +40,6 @@ Be noted that the the first endpoint (`/medicamento`) **will only make use of th
 ## Handling errors  
 The library comes with custom exceptions for error handling.  
 This exceptions are the following:
-- _aempsconn.errors.ConnectionFailure_  
-Custom exception related to the timeout.
 
 - _aempsconn.errors.HTTPFailure_  
 Custom exception related to the HTTP requests.
