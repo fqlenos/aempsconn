@@ -67,7 +67,7 @@ class JSONKeyFailure(CustomException):
 
     def __init__(
         self,
-        message: str = "The request you made may be wrong. 'Resultados' should be in the response. You may want to open an issue on 'https://github.com/fqlenos/aempsconn'.",
+        message: str = "The request you made may be wrong. 'Resultados' should be in the response. Check your conditions.",
     ) -> None:
         super().__init__(message)
 
@@ -79,7 +79,7 @@ class JSONDecodeFailure(CustomException):
 
     def __init__(
         self,
-        message: str = "HTTP response seems to be empty. You may want to open an issue on 'https://github.com/fqlenos/aempsconn'.",
+        message: str = "HTTP response seems to be empty. Check your conditions.",
     ) -> None:
         super().__init__(message)
 

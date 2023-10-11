@@ -7,9 +7,10 @@ from ..utils import ConfigModel
 
 
 class Filter:
+    conditions: dict  # just for typing
+
     def __init__(self, config: ConfigModel) -> None:
         self.config: ConfigModel = config
-        self.conditions: dict = {}
 
     def query(self) -> str:
         """
@@ -25,7 +26,7 @@ class Filter:
                     value = 0
 
             query += f"{key}={str(value)}&"
-        query = query[:-1]  # so it removes the last "&"
+        query: str = query[:-1]  # so it removes the last "&"
 
         if self.config.logger is not None:
             self.config.logger.debug(f"Query created: {query}")
