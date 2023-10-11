@@ -1,11 +1,9 @@
-name: dev
-
+name: Check Code Lint & Poetry Configuration
 on:
   pull_request:
   push:
     branches:
       - dev
-
 jobs:
   ci:
     # Set up operating system
