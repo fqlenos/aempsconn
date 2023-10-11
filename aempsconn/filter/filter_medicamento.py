@@ -17,16 +17,17 @@ class Equals(Generic[T]):
     Adds new condition to the conditions dict
     """
 
+    med: "FilterMedicamento"
+    key: str
+
     def equals(self, value: T) -> "FilterMedicamento":
         """
         "equals" because the condition should be equal to the value added.
         """
-        self.med: FilterMedicamento
-        self.key: str
-        self.med.conditions.clear()  # it clears the dict because only one value is valid.
-        self.med.conditions.update({self.key: value})
+        new_meds = FilterMedicamento(config=self.med.config)
+        new_meds.conditions.update({self.key: value})
 
-        return self.med
+        return new_meds
 
 
 class CodNacionalFilter(Equals[str]):
@@ -61,14 +62,14 @@ class FilterMedicamento(Filter):
         self.conditions: dict = {}
 
     @property
-    def cod_nacional(self):
+    def cod_nacional(self) -> CodNacionalFilter:
         """
         Add condition to "cn"
         """
         return CodNacionalFilter(self)
 
     @property
-    def num_registro(self):
+    def num_registro(self) -> NumRegistroFilter:
         """
         Add condition to "nregistro"
         """
