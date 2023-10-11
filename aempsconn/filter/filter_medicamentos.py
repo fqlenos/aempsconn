@@ -284,98 +284,98 @@ class FilterMedicamentos(Filter):
         self.conditions: dict = {}
 
     @property
-    def nombre(self):
+    def nombre(self) -> NombreFilter:
         """
         "Nombre" of the "medicamento".
         """
         return NombreFilter(self)
 
     @property
-    def laboratorio(self):
+    def laboratorio(self) -> LabFilter:
         """
         "Laboratorio" of the "medicamento".
         """
         return LabFilter(self)
 
     @property
-    def pactivo1(self):
+    def pactivo1(self) -> PactivoOneFilter:
         """
         First "principio activo" of the "medicamento".
         """
         return PactivoOneFilter(self)
 
     @property
-    def pactivo2(self):
+    def pactivo2(self) -> PactivoTwoFilter:
         """
         Second "principio activo" of the "medicamento".
         """
         return PactivoTwoFilter(self)
 
     @property
-    def id_pactivo1(self):
+    def id_pactivo1(self) -> IDPactivoOneFilter:
         """
         First ID of the "principio activo" of the "medicamento".
         """
         return IDPactivoOneFilter(self)
 
     @property
-    def id_pactivo2(self):
+    def id_pactivo2(self) -> IDPactivoTwoFilter:
         """
         Second ID of the "principio activo" of the "medicamento".
         """
         return IDPactivoTwoFilter(self)
 
     @property
-    def cod_nacional(self):
+    def cod_nacional(self) -> CodNacionalFilter:
         """
         "Código nacional" of the "medicamento".
         """
         return CodNacionalFilter(self)
 
     @property
-    def atc(self):
+    def atc(self) -> ATCFilter:
         """
         "ATC" of the "medicamento".
         """
         return ATCFilter(self)
 
     @property
-    def num_registro(self):
+    def num_registro(self) -> NumRegistroFilter:
         """
         Add condition to "nregistro"
         """
         return NumRegistroFilter(self)
 
     @property
-    def num_pactivo(self):
+    def num_pactivo(self) -> NumeroPactivoFilter:
         """
         Add condition to "npactiv"
         """
         return NumeroPactivoFilter(self)
 
     @property
-    def triangulo(self):
+    def triangulo(self) -> TrianguloFilter:
         """
         Add condition to "triangulo"
         """
         return TrianguloFilter(self)
 
     @property
-    def huerfano(self):
+    def huerfano(self) -> HuerfanoFilter:
         """
         Add condition to "huerfano"
         """
         return HuerfanoFilter(self)
 
     @property
-    def biosimilar(self):
+    def biosimilar(self) -> BiosimilarFilter:
         """
         Add condition to "biosimilar"
         """
         return BiosimilarFilter(self)
 
     @property
-    def sust(self):
+    def sust(self) -> SustFilter:
         """
         Add condition to "sust", where:
         1: Biológicos,
@@ -387,49 +387,49 @@ class FilterMedicamentos(Filter):
         return SustFilter(self)
 
     @property
-    def vmp(self):
+    def vmp(self) -> VMPFilter:
         """
         Add condition to "vmp"
         """
         return VMPFilter(self)
 
     @property
-    def comercializado(self):
+    def comercializado(self) -> ComercFilter:
         """
         Add condition to "comerc"
         """
         return ComercFilter(self)
 
     @property
-    def autorizado(self):
+    def autorizado(self) -> AutorizadosFilter:
         """
         Add condition to "autorizados"
         """
         return AutorizadosFilter(self)
 
     @property
-    def receta(self):
+    def receta(self) -> RecetaFilter:
         """
         Add condition to "receta"
         """
         return RecetaFilter(self)
 
     @property
-    def estupefaciente(self):
+    def estupefaciente(self) -> EstupefacienteFilter:
         """
         Add condition to "estupefaciente"
         """
         return EstupefacienteFilter(self)
 
     @property
-    def psicotropo(self):
+    def psicotropo(self) -> PsicotropoFilter:
         """
         Add condition to "psicotropo"
         """
         return PsicotropoFilter(self)
 
     @property
-    def estupsico(self):
+    def estupsico(self) -> EstuopsicoFilter:
         """
         Add condition to "estupsico"
         """
