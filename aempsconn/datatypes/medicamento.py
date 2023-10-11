@@ -2,20 +2,20 @@
 Data type for 'Medicamento'.
 """
 
-from pydantic import BaseModel
 from typing import TYPE_CHECKING
 
+from pydantic import BaseModel
 
 if TYPE_CHECKING:
     """
     'if' blocks that are never True on runtime (running your code) but they are used by code analysis (IDEs) to highlight the types.
     """
     from .atc import ATCModel
+    from .documento import DocumentoModel
     from .elemento import ElementoModel
     from .estado import EstadoModel
     from .excipiente import ExcipienteModel
     from .foto import FotoModel
-    from .documento import DocumentoModel
     from .pactivo import PActivoModel
     from .presentacion import PresentacionModel
 

@@ -2,9 +2,9 @@
 Data type for 'Presentación'.
 """
 
-from pydantic import BaseModel
 from typing import TYPE_CHECKING
 
+from pydantic import BaseModel
 
 if TYPE_CHECKING:
     """

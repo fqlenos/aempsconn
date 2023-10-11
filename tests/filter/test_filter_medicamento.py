@@ -1,10 +1,7 @@
 from unittest import TestCase
-from unittest.mock import patch, Mock
-from aempsconn.filter import (
-    FilterMedicamento,
-    CodNacionalFilter,
-    NumRegistroFilter,
-)
+from unittest.mock import Mock
+
+from aempsconn.filter import CodNacionalFilter, FilterMedicamento, NumRegistroFilter
 
 
 class TestFilterMedicamento(TestCase):

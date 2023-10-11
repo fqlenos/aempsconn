@@ -2,8 +2,9 @@
 Defines the configuration needed for activate AEMPSconn.
 """
 
-from pydantic import ConfigDict, BaseModel, HttpUrl
 from logging import Logger
+
+from pydantic import BaseModel, ConfigDict, HttpUrl
 
 
 class ModelConfig(BaseModel):

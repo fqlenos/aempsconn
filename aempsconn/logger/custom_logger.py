@@ -1,4 +1,5 @@
 from logging import Logger, StreamHandler
+
 from .formatter import Formatter
 
 

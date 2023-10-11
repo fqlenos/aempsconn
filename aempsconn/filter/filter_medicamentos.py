@@ -2,10 +2,10 @@
 Filters for "medicamento" requests 
 """
 
-from typing import TypeVar, Generic
+from typing import Generic, TypeVar
 
-from .filter import Filter
 from ..utils import ConfigModel
+from .filter import Filter
 
 T = TypeVar("T")
 
