@@ -38,6 +38,12 @@ jobs:
           virtualenvs-path: ~/.venv
           installer-parallel: true
 
+      - name: Install isort
+        run: poetry run pip install isort
+
+      - name: Install black
+        run: poetry run pip install black
+
       - name: Restore cached dependencies
         uses: actions/cache@v3
         with:
@@ -45,6 +51,7 @@ jobs:
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-poetry-
+
       - name: Install package
         run: poetry install
 
