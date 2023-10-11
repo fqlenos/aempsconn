@@ -1,0 +1,60 @@
+name: dev
+
+on:
+  pull_request:
+  push:
+    branches:
+      - dev
+
+jobs:
+  ci:
+    # Set up operating system
+    runs-on: ubuntu-latest
+
+    # Define job steps
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Check-out repository
+        uses: actions/checkout@v3
+
+      - name: Load cached Poetry installation
+        id: cached-poetry
+        uses: actions/cache@v3
+        with:
+          path: ~/.local # the path depends on the OS
+          key: poetry # increment to reset cache
+
+      - name: Install poetry
+        if: steps.cached-poetry.outputs.cache-hit != 'true'
+        uses: snok/install-poetry@v1
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pypoetry
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
+      - name: Install package
+        run: poetry install
+
+      - name: Lint
+        run: |
+          poetry run isort --check --diff .
+          poetry run black --check --diff .
+        # poetry run flake8 .
+
+      - name: Test with pytest
+        run: poetry run pytest tests/ --cov=aempsconn --cov-report=xml
+
+      - name: Use Codecov to track coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml # coverage report
+
+      - name: Build documentation
+        run: poetry run make html --directory docs/
