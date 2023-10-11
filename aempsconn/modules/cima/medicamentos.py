@@ -25,7 +25,7 @@ class Medicamentos(Base):
         return Endpoint.MEDICAMENTOS.value
 
     @json_res_handler
-    def get(self, filter: FilterMedicamentos) -> list[ListMedicamentoModel] | None:
+    def get(self, filter: FilterMedicamentos) -> list[ListMedicamentoModel]:
         """
         Create specific response with the cororect data type
 
@@ -46,7 +46,8 @@ class Medicamentos(Base):
         if len(results) > 0:
             for medicamento in results:
                 medicamentos.append(ListMedicamentoModel(**medicamento))
-            return medicamentos
 
-        if self.config.logger is not None:
+        if self.config.logger is not None and not medicamentos:
             self.config.logger.info("The respose seems to be empty.")
+
+        return medicamentos
