@@ -7,8 +7,8 @@ class CustomException(Exception):
     """
     Custom Exception for raising and handling errors
 
-    Arguments:
-        message (str): Error to be printed in the Exception
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(self, message: str) -> None:
@@ -19,6 +19,9 @@ class CustomException(Exception):
 class TimeoutFailure(CustomException):
     """
     Custom exception related to the timeout
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(
@@ -31,6 +34,9 @@ class TimeoutFailure(CustomException):
 class HTTPFailure(CustomException):
     """
     Custom exception related to the HTTP requests
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(
@@ -42,6 +48,9 @@ class HTTPFailure(CustomException):
 class ProxyFailure(CustomException):
     """
     Custom exception related to the proxy configuration
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(self, message: str = "Check the Proxy.") -> None:
@@ -51,6 +60,9 @@ class ProxyFailure(CustomException):
 class RequestFailure(CustomException):
     """
     Custom exception related to the python3 request module
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(
@@ -63,6 +75,9 @@ class RequestFailure(CustomException):
 class JSONKeyFailure(CustomException):
     """
     Custom exception related to JSON Keys
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(
@@ -75,6 +90,9 @@ class JSONKeyFailure(CustomException):
 class JSONDecodeFailure(CustomException):
     """
     Custom exception related to JSON decode
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(
@@ -87,6 +105,9 @@ class JSONDecodeFailure(CustomException):
 class UnhandledError(CustomException):
     """
     Custom exception related to unhandled exceptions
+
+    :param message: Error to be printed in the Exception
+    :type message: str
     """
 
     def __init__(

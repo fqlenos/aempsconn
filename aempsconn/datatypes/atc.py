@@ -9,10 +9,10 @@ class ATCModel(BaseModel):
     """
     Pydantic model for data type: ATC.
 
-    Arguments:
-        codigo (str): código ATC
-        nombre (str): nombre descriptivo
-        nivel (int): nivel del código ATC
+    :param codigo: Código ATC.
+    :type codigo: str
+    :param str nombre: Nombre descriptivo.
+    :param int nivel: Nivel del código ATC.
     """
 
     codigo: str
