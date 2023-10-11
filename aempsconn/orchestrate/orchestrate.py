@@ -45,7 +45,6 @@ class Orchestrate:
 
         # Initialize existing modules with current configuration.
         Base(config=config)
-        Filter(config=config)
 
         # Related to CIMA
         self.filter_medicamento = FilterMedicamento(config=config)
