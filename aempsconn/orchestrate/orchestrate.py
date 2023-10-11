@@ -2,14 +2,14 @@
 Module in charge of orchestrating all existing modules in the project.
 """
 
-from logging import Logger
-from pydantic import ValidationError
 import sys
-from pydantic import HttpUrl
+from logging import Logger
 
-from ..utils import ConfigModel, BASEURL
-from ..modules import cima, Base
+from pydantic import HttpUrl, ValidationError
+
 from ..filter import Filter, FilterMedicamento, FilterMedicamentos
+from ..modules import Base, cima
+from ..utils import BASEURL, ConfigModel
 
 
 class Orchestrate:

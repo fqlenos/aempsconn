@@ -3,7 +3,9 @@ Test medicamentos module
 """
 
 from unittest import TestCase
+
 from pydantic import HttpUrl
+
 from aempsconn.modules.cima import Medicamentos
 from aempsconn.utils import ConfigModel
 

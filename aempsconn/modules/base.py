@@ -2,12 +2,13 @@
 Base module for getting generic methods.
 """
 
-import requests
-from requests import Response
 import sys
 
-from ..utils import ConfigModel
+import requests
+from requests import Response
+
 from ..decorators import http_res_handler
+from ..utils import ConfigModel
 
 
 class Base:
