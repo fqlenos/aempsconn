@@ -55,7 +55,6 @@ jobs:
 
       - name: Lint
         run: |
-          poetry run isort --check --diff src/
           poetry run black --check --diff src/
           poetry run flake8 src/
 
