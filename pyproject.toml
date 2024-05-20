@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aempsconn"
-version = "0.1.4"
+version = "1.0.0"
 description = "Library designed for interacting with the CIMA API (AEMPS)"
 license = "MIT"
 authors = ["fqlenos <fqlenos@protonmail.com>"]
@@ -10,28 +10,16 @@ repository = "https://github.com/fqlenos/aempsconn"
 
 
 [tool.poetry.dependencies]
-python = "^3.11"
-annotated-types = "0.5.0"
-certifi = "2023.7.22"
-charset-normalizer = "3.3.0"
-idna = "3.4"
-pydantic = "2.4.2"
-pydantic-core = "2.10.1"
+python = "^3.10"
+pydantic = "2.7.1"
 requests = "2.31.0"
-typing-extensions = "4.8.0"
-urllib3 = "2.0.6"
-
-
-[tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-line_length = 88
-profile = "black"
+urllib3 = "2.2.1"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest-cov = "^4.1.0"
+pre-commit = "3.7.1"
+pydoclint = "0.4.1"
+flake8 = "7.0.0"
 
 
 [build-system]
