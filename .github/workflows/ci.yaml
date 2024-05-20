@@ -30,14 +30,11 @@ jobs:
         if: steps.cached-poetry.outputs.cache-hit != 'true'
         uses: snok/install-poetry@v1
         with:
-          version: 1.8.2
+          version: 1.8.3
           virtualenvs-create: true
           virtualenvs-in-project: false
           virtualenvs-path: ~/.venv
           installer-parallel: true
-
-      - name: Install isort
-        run: poetry run pip install isort
 
       - name: Install black
         run: poetry run pip install black
