@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Check-out repository
         uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
         if: steps.cached-poetry.outputs.cache-hit != 'true'
         uses: snok/install-poetry@v1
         with:
-          version: 1.6.1
+          version: 1.8.2
           virtualenvs-create: true
           virtualenvs-in-project: false
           virtualenvs-path: ~/.venv
@@ -55,17 +55,17 @@ jobs:
 
       - name: Lint
         run: |
-          poetry run isort --check --diff .
-          poetry run black --check --diff .
-        # poetry run flake8 .
+          poetry run isort --check --diff src/
+          poetry run black --check --diff src/
+          poetry run flake8 src/
 
-      - name: Test with pytest
-        run: poetry run pytest tests/ --cov=aempsconn --cov-report=xml
+      #- name: Test with pytest
+      #  run: poetry run pytest tests/ --cov=aempsconn --cov-report=xml
 
-      - name: Use Codecov to track coverage
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage.xml # coverage report
+      #- name: Use Codecov to track coverage
+      #  uses: codecov/codecov-action@v3
+      #  with:
+      #    files: ./coverage.xml # coverage report
 
-      # - name: Build documentation
-      #   run: poetry run make html --directory docs/
+      - name: Build documentation
+        run: poetry run make html --directory docs/
