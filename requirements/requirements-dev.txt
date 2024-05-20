@@ -1,0 +1,4 @@
+-r requirements.txt
+pre-commit==3.7.1
+pydoclint==0.4.1
+flake8==7.0.0
