@@ -11,8 +11,8 @@ repository = "https://github.com/fqlenos/aempsconn"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pydantic = "2.7.1"
-requests = "2.31.0"
+pydantic = "2.7.2"
+requests = "2.32.3"
 urllib3 = "2.2.1"
 
 
