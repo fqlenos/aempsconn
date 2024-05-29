@@ -29,7 +29,7 @@ class EstadoModel:
         try:
             if isinstance(v, int):
                 try:
-                    return datetime.fromtimestamp(v)
+                    return datetime.fromtimestamp(v / 1000)
 
                 except (OSError, ValueError):
                     return None
