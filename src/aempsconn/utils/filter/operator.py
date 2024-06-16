@@ -26,3 +26,10 @@ class Integer(
     Generic[R],
 ):
     pass
+
+
+class Date(
+    Equals[str, R],
+    Generic[R],
+):
+    pass
