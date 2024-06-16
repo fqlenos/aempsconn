@@ -29,10 +29,16 @@ from aempsconn.filter import (
     MedicamentoFilter,
     MedicamentosFilter,
     PresentacionesFilter,
+    RegistroCambiosFilter,
     VmppFilter,
 )
 
 aemps = AempsConn()
+
+for change in aemps.registro_cambios.get(
+    filter=RegistroCambiosFilter().fecha.equals(value="20/12/2023")
+):
+    print(change)
 
 for med in aemps.medicamento.get(
     filter=MedicamentoFilter().nregistro.equals(value="62121")
@@ -41,6 +47,11 @@ for med in aemps.medicamento.get(
 
 for med in aemps.medicamentos.get(
     filter=MedicamentosFilter().nombre.startswith(value="meto")
+):
+    print(med.nombre)
+
+for med in aemps.medicamentos.get(
+    filter=MedicamentosFilter().nombre.startswith(value="")
 ):
     print(med.nombre)
 
