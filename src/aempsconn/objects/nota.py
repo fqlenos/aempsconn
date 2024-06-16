@@ -10,7 +10,7 @@ from pydantic.dataclasses import dataclass
 class NotaModel:
     tipo: int
     num: str
-    ref: str
+    referencia: str
     asunto: str
     fecha: datetime
     url: HttpUrl
