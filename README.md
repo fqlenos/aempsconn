@@ -26,19 +26,16 @@ If you want to filter by more than one value, simply concatenate all the desired
 ```python
 from aempsconn.aemps import AempsConn
 from aempsconn.filter import (
+    MaterialFilter,
     MedicamentoFilter,
     MedicamentosFilter,
+    NotaFilter,
     PresentacionesFilter,
     RegistroCambiosFilter,
     VmppFilter,
 )
 
 aemps = AempsConn()
-
-for change in aemps.registro_cambios.get(
-    filter=RegistroCambiosFilter().fecha.equals(value="20/12/2023")
-):
-    print(change)
 
 for med in aemps.medicamento.get(
     filter=MedicamentoFilter().nregistro.equals(value="62121")
@@ -62,6 +59,19 @@ for med in aemps.presentaciones.get(
 
 for desc_cli in aemps.vmpp.get(filter=VmppFilter().nombre.contains("metotrexato")):
     print(desc_cli.vmpDesc)
+
+for change in aemps.registro_cambios.get(
+    filter=RegistroCambiosFilter().fecha.equals(value="20/12/2023")
+):
+    print(change)
+
+for note in aemps.notas.get(filter=NotaFilter().nregistro.equals("69223")):
+    print(note)
+
+for material in aemps.materiales.get(
+    filter=MaterialFilter().nregistro.equals("78632")
+):
+    print(material)
 
 ```
 
