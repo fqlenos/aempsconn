@@ -1,5 +1,6 @@
 """Module for the base operators of the filtering."""
 
+from datetime import datetime
 from typing import Generic, TypeVar
 
 from .filter import Filter, Filterable
@@ -21,6 +22,10 @@ class BaseOperator(Generic[T, R]):
 
 class Equals(BaseOperator[T, R], Generic[T, R]):
     def equals(self, value: T) -> R:
+        if self.key == "fecha":
+            # checks datetime format and raises a value error if needed
+            datetime.strptime(str(value), "%d/%m/%Y").strftime("%d/%m/%Y")
+
         self.instance.query.append(Filter(key=self.key, value=value))
         return self.instance
 
