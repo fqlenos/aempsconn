@@ -1,7 +1,5 @@
 """Module for filtering the 'Registro Cambios'."""
 
-# from datetime import datetime
-
 from ..utils.filter import Date, Filterable, Integer, Text
 
 
