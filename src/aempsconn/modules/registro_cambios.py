@@ -18,4 +18,6 @@ class RegistroCambios(BaseModule[RegistroCambiosFilter, RegistroCambiosModel]):
         return "registroCambios"
 
     def parse_result(self, data: dict[str, Any]) -> RegistroCambiosModel:
+        if "Es necesario indicar la fecha" in data.values():
+            raise KeyError("You must filter, at least, by `fecha`")
         return RegistroCambiosModel(**data)
