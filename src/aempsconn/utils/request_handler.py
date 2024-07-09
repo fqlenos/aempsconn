@@ -115,6 +115,12 @@ class ReqHandler(Session):
         initial_response: dict[str, Any] = self._raw_request(
             method=method, endpoint=endpoint, params=params, **kwargs
         )
+
+        if isinstance(initial_response, list):
+            # When requesting "notas", AEMPS returns a list
+            yield initial_response
+            return
+
         if initial_response.get(RESULTS, None) is None:
             yield initial_response
 
