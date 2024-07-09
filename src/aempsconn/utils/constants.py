@@ -1,7 +1,7 @@
 """Module for the constants of the AEMPSconn."""
 
 from enum import StrEnum
-from typing import cast
+from typing import Collection, cast
 
 from pydantic import ConfigDict, HttpUrl
 
@@ -30,6 +30,7 @@ CIMA_URL: HttpUrl = cast(
 TOTAL_RETRIES: int = 3
 BACKOFF_FACTOR: float = 0.1
 BACKOFF_MAX: int = 180
+STATUS_FORCE_LIST: Collection[int] = {500, 501, 502, 503, 504, 520, 525}
 
 # Constant values for the Request
 TOTAL_VALUES = "totalFilas"

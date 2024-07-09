@@ -4,7 +4,15 @@ from typing import Collection
 
 from pydantic import HttpUrl
 
-from .modules import Medicamento, Medicamentos, Presentaciones, Vmpp
+from .modules import (
+    Material,
+    Medicamento,
+    Medicamentos,
+    Notas,
+    Presentaciones,
+    RegistroCambios,
+    Vmpp,
+)
 from .utils.request_handler import ReqHandler
 
 
@@ -46,3 +54,15 @@ class AempsConn:
     @property
     def vmpp(self) -> Vmpp:
         return Vmpp(req_handler=self.__req_handler)
+
+    @property
+    def registro_cambios(self) -> RegistroCambios:
+        return RegistroCambios(req_handler=self.__req_handler)
+
+    @property
+    def notas(self) -> Notas:
+        return Notas(req_handler=self.__req_handler)
+
+    @property
+    def materiales(self) -> Material:
+        return Material(req_handler=self.__req_handler)

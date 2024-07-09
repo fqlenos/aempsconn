@@ -17,6 +17,7 @@ from .constants import (
     PAGE,
     PAGE_SIZE,
     RESULTS,
+    STATUS_FORCE_LIST,
     TOTAL_RETRIES,
     TOTAL_VALUES,
     HttpMethods,
@@ -57,7 +58,7 @@ class ReqHandler(Session):
     @property
     def status_force_list(self) -> Collection[int]:
         if self.__status_force_list is None:
-            return range(500, 600)
+            return STATUS_FORCE_LIST
 
         return self.__status_force_list
 
@@ -115,6 +116,12 @@ class ReqHandler(Session):
         initial_response: dict[str, Any] = self._raw_request(
             method=method, endpoint=endpoint, params=params, **kwargs
         )
+
+        if isinstance(initial_response, list):
+            # When requesting "notas", AEMPS returns a list
+            yield initial_response
+            return
+
         if initial_response.get(RESULTS, None) is None:
             yield initial_response
 
