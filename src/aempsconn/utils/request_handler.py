@@ -17,6 +17,7 @@ from .constants import (
     PAGE,
     PAGE_SIZE,
     RESULTS,
+    STATUS_FORCE_LIST,
     TOTAL_RETRIES,
     TOTAL_VALUES,
     HttpMethods,
@@ -57,7 +58,7 @@ class ReqHandler(Session):
     @property
     def status_force_list(self) -> Collection[int]:
         if self.__status_force_list is None:
-            return range(500, 600)
+            return STATUS_FORCE_LIST
 
         return self.__status_force_list
 
