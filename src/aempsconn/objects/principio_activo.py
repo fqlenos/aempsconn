@@ -1,11 +1,10 @@
 """Module for the 'Principio Activo' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class PActivoModel:
-    id: int
+class PActivoModel(BaseModel):
+    pactivo_id: int = Field(alias="id")
     codigo: str
     nombre: str
     cantidad: str

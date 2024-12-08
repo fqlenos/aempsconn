@@ -2,12 +2,10 @@
 
 from datetime import datetime
 
-from pydantic import HttpUrl
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, HttpUrl
 
 
-@dataclass
-class VideoModel:
+class VideoModel(BaseModel):
     titulo: str
     url: HttpUrl
     video: HttpUrl

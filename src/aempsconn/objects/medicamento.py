@@ -1,6 +1,6 @@
 """Module for the 'Medicamento' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 from .atc import ATCModel
 from .documento import DocumentoModel
@@ -12,8 +12,7 @@ from .presentacion import PresentacionModel
 from .principio_activo import PActivoModel
 
 
-@dataclass
-class MedicamentoBase:
+class MedicamentoBase(BaseModel):
     nregistro: str
     nombre: str
     labtitular: str
@@ -38,7 +37,6 @@ class MedicamentoBase:
     fotos: list["FotoModel"] | None = None
 
 
-@dataclass(kw_only=True)
 class MedicamentoModel(MedicamentoBase):
     pactivos: str
     atcs: list["ATCModel"]
@@ -47,6 +45,5 @@ class MedicamentoModel(MedicamentoBase):
     excipientes: list["ExcipienteModel"] | None = None
 
 
-@dataclass
 class MedicamentosModel(MedicamentoBase):
     pass

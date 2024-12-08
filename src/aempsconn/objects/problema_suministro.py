@@ -2,11 +2,10 @@
 
 from datetime import datetime
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class ProblemaSuministroModel:
+class ProblemaSuministroModel(BaseModel):
     cn: str
     nombre: str
     fini: datetime

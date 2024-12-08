@@ -1,11 +1,10 @@
 """Module for the 'Excipiente' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class ExcipienteModel:
-    id: int
+class ExcipienteModel(BaseModel):
+    excipiente_id: int = Field(alias="id")
     nombre: str
     cantidad: str
     unidad: str

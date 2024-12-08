@@ -1,10 +1,9 @@
 """Module for the 'Seccion' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class SeccionModel:
+class SeccionModel(BaseModel):
     seccion: str
     titulo: str
     orden: int

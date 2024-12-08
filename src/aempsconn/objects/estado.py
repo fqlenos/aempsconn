@@ -2,12 +2,10 @@
 
 from datetime import datetime
 
-from pydantic import field_validator
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, field_validator
 
 
-@dataclass
-class EstadoModel:
+class EstadoModel(BaseModel):
     aut: datetime | None = None
     susp: datetime | None = None
     rev: datetime | None = None

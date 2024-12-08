@@ -3,12 +3,10 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import HttpUrl
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, HttpUrl
 
 
-@dataclass
-class FotoModel:
+class FotoModel(BaseModel):
     tipo: Literal["materialas", "formafarmac"]
     url: HttpUrl
     fecha: datetime
