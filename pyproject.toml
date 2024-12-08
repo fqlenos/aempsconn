@@ -11,15 +11,15 @@ repository = "https://github.com/fqlenos/aempsconn"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pydantic = "2.8.2"
+pydantic = "2.10.3"
 requests = "2.32.3"
-urllib3 = "2.2.2"
+urllib3 = "2.2.3"
 
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "3.7.1"
-pydoclint = "0.4.1"
-flake8 = "7.0.0"
+pre-commit = "4.0.1"
+pydoclint = "0.5.10"
+flake8 = "7.1.1"
 
 
 [build-system]
