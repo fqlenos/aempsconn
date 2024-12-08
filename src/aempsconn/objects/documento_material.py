@@ -2,12 +2,10 @@
 
 from datetime import datetime
 
-from pydantic import HttpUrl
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, HttpUrl
 
 
-@dataclass
-class DocumentoMaterialModel:
+class DocumentoMaterialModel(BaseModel):
     nombre: str
     url: HttpUrl
     fecha: datetime

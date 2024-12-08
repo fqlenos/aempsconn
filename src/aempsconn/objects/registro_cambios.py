@@ -3,12 +3,10 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import Field
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class RegistroCambiosModel:
+class RegistroCambiosModel(BaseModel):
     nregistro: str
     fecha: datetime
     cambio: list[

@@ -2,12 +2,10 @@
 
 from datetime import datetime
 
-from pydantic import HttpUrl, field_validator
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, HttpUrl, field_validator
 
 
-@dataclass
-class NotaModel:
+class NotaModel(BaseModel):
     tipo: int
     num: str
     referencia: str

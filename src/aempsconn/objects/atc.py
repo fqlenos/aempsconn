@@ -1,10 +1,9 @@
 """Module for the 'Atc' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class ATCModel:
+class ATCModel(BaseModel):
     codigo: str
     nombre: str
     nivel: int

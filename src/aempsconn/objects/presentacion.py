@@ -1,13 +1,12 @@
 """Module for the 'Presentacion' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 from .documento import DocumentoModel
 from .estado import EstadoModel
 
 
-@dataclass
-class PresentacionModel:
+class PresentacionModel(BaseModel):
     cn: str
     nombre: str
     estado: "EstadoModel"
@@ -15,7 +14,6 @@ class PresentacionModel:
     psum: bool
 
 
-@dataclass
 class PresentacionesModel:
     nregistro: str
     cn: str

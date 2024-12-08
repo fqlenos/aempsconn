@@ -1,10 +1,9 @@
 """Module for the 'Item' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class ItemModel:
-    id: int
+class ItemModel(BaseModel):
+    item_id: int = Field(alias="id")
     nombre: str
     codigo: str | None = None

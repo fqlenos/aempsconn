@@ -1,10 +1,9 @@
 """Module for the 'Descripción Clínica' object."""
 
-from pydantic.dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class DescripcionClinicaModel:
+class DescripcionClinicaModel(BaseModel):
     vmp: str
     vmpDesc: str
     vmpp: str
